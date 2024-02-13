@@ -1,0 +1,56 @@
+rm -rf .git/
+
+that's the fucking problem:
+django-heroku==0.3.1
+
+
+ .gitignore:
+ ll_env/
+__pycache__/
+*.sqlite3
+.DS_Store
+
+
+We tell Git to ignore the entire ll_env directory, because we can re-create 
+it automatically at any time. We also don’t track the __pycache__ directory, 
+which contains the .pyc files that are created automatically when the .py files 
+are executed. We don’t track changes to the local database, because it’s a 
+bad habit: if you’re ever using SQLite on a server, you might accidentally 
+overwrite the live database with your local test database when you push the 
+project to the server. The asterisk in *.sqlite3 tells Git to ignore any file that 
+ends with the extension .sqlite3.
+
+
+If you’re using macOS, add .DS_Store to your .gitignore file. This is a file that 
+stores information about folder settings on macOS, and it has nothing to do with this 
+project.
+
+
+pip install -i https://pypi.tuna.tsinghua.edu.cn/simple 
+
+
+
+wbe0$^
+C-U
+C-D
+
+G
+gg
+
+L 
+M
+H
+ 
+f 
+F
+t 
+T
+
+o
+u
+dw ce 
+dd cc
+
+x 
+r 
+C-r
