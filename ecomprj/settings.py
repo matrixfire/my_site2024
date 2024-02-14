@@ -51,6 +51,7 @@ INSTALLED_APPS = [
     # Custom Apps
     'core',
     'userauths',
+    'service',
 ]
 
 MIDDLEWARE = [
@@ -375,3 +376,94 @@ CKEDITOR_5_CONFIGS = {
 
 PAYPAL_RECEIVER_EMAIL = 'businessdestiny@gmail.com'
 PAYPAL_TEST = True
+
+
+
+'''
+Django provides several settings that you can configure based on 
+whether you are organizing your assets (templates, static files, and media files) at the project level or app level. Here are the key settings and their typical configurations:
+
+1. **`TEMPLATES` Setting:**
+   - Configure the `DIRS` option in the `TEMPLATES` setting to include the paths to your template folders.
+
+   Example (`settings.py` at the project level):
+   ```python
+   TEMPLATES = [
+       {
+           'BACKEND': 'django.template.backends.django.DjangoTemplates',
+           'DIRS': [os.path.join(BASE_DIR, 'templates')],
+           # ... other options ...
+       },
+   ]
+   ```
+
+   Example (`settings.py` at the app level):
+   ```python
+   TEMPLATES = [
+       {
+           'BACKEND': 'django.template.backends.django.DjangoTemplates',
+           'DIRS': [os.path.join(BASE_DIR, 'myapp', 'templates')],
+           # ... other options ...
+       },
+   ]
+   ```
+
+2. **`STATICFILES_DIRS` Setting:**
+   - Configure the `STATICFILES_DIRS` setting to include the paths to your static files folders.
+
+   Example (`settings.py` at the project level):
+   ```python
+   STATICFILES_DIRS = [
+       os.path.join(BASE_DIR, 'static'),
+   ]
+   ```
+
+   Example (`settings.py` at the app level):
+   ```python
+   STATICFILES_DIRS = [
+       os.path.join(BASE_DIR, 'myapp', 'static'),
+   ]
+   ```
+
+3. **`MEDIA_ROOT` and `MEDIA_URL` Settings:**
+   - Configure the `MEDIA_ROOT` and `MEDIA_URL` settings to handle user-uploaded media files.
+
+   Example (`settings.py` at the project level):
+   ```python
+   MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+   MEDIA_URL = '/media/'
+   ```
+
+   Note: `MEDIA_ROOT` is typically an absolute filesystem path outside the project or app folders.
+
+4. **`INSTALLED_APPS` Order:**
+   - The order of apps in the `INSTALLED_APPS` setting matters. Place your project-level apps before app-level apps if there is a potential for app-level settings to override project-level settings.
+
+   Example (`settings.py`):
+   ```python
+   INSTALLED_APPS = [
+       # Project-level apps
+       'myproject.core',
+       # App-level apps
+       'myapp',
+       # ... other apps ...
+   ]
+   ```
+
+By configuring these settings, you ensure that Django knows where to find your templates, static files, and media files based on the chosen organization. Adjust the paths and URLs as needed for your specific project structure.
+
+STATICFILES_DIRS is used during development to specify additional
+directories where Django should look for static files. 
+STATIC_ROOT is used for deployment to specify the directory where Django should
+collect and store static files from all apps for production use. 
+When deploying a Django project, you typically run python manage.py
+collectstatic to gather static files from various locations
+(including STATICFILES_DIRS and the static directories of installed
+apps) and store them in the STATIC_ROOT directory. The web server
+(e.g., Nginx or Apache) then serves these static files directly,
+improving performance in a production environment.
+
+
+
+
+'''
