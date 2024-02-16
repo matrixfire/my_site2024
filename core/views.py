@@ -100,13 +100,26 @@ def product_detail_view(request, pid):
 
     make_review = True 
 
+    # if request.user.is_authenticated:
+    #     address = Address.objects.get(status=True, user=request.user)
+    #     user_review_count = ProductReview.objects.filter(user=request.user, product=product).count()
+
+    #     if user_review_count > 0:
+    #         make_review = False
+
     if request.user.is_authenticated:
-        address = Address.objects.get(status=True, user=request.user)
+        try:
+            # Attempt to get the Address object
+            address = Address.objects.get(status=True, user=request.user)
+        except Address.DoesNotExist:
+            # Handle the case where the address does not exist
+            address = "Not Yet Provided"
+
         user_review_count = ProductReview.objects.filter(user=request.user, product=product).count()
 
         if user_review_count > 0:
             make_review = False
-    
+
     address = "Login To Continue"
 
 
