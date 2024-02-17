@@ -31,6 +31,55 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 
+------------------------------------------------------------
+1, 
+With Django, we can already create a complete web application. So why
+bother to create an API with Django and then create separate
+frontends when we can do it all with Django? Now, say your app
+becomes a hit. Users love your app so much that they want an iOS and
+Android version of it. So, you have to create the same functionality
+of your app in two more different languages (Swift and Kotlin for
+example). You might also hear of new frontend frameworks like React,
+Angular, Vue to make your app more dynamic and modern. You want to
+try them out. How can we better achieve both objectives? The answer
+is to create a REST API. With Django REST Framework, we can create a
+common API to serve information to different frontends like Vue,
+React, Android, iOS etc. We need only to create the logic in the API
+and then have each of the frontends connect to it. This makes it more
+scalable and reliable since we just have one code base and database
+to serve the information.
+
+2, 
+The Django Rest Framework (DRF) library enables us to easily create
+Django APIs that return JSON. DRF takes care of the heavy lifting of
+transforming database models into a RESTful API. For example, it
+provides CRUD operations, authentication modules, JSON serializers,
+routing, and many more. It purposefully mimics many of Django ’ s
+traditional conventions making it much faster to learn. With a
+minimal amount of code, DRF can transform any existing Django
+application into a web API.
+
+
+
+
+
+
+
+
+------------------------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 Tools:
 1, fake-filler
 2, unminify
