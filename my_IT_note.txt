@@ -135,7 +135,32 @@ In the realm of SEO (Search Engine Optimization), several critical factors contr
 
 
 
+------------------------
+Django more:
 
+ Django signals
+ integrated Redis into your project
+
+
+
+
+What I want mysite can do:
+
+
+Your online shop will enable clients to browse products, add them to the cart, 
+apply discount codes, go through the checkout process, pay with a credit card, and obtain an invoice. 
+You will also implement a recommendation engine to recommend products to your customers, and 
+you will use internationalization to offer your site in multiple languages.
+
+
+
+In more detail:
+• Creating the product catalog models, adding them to the administration site, and building the 
+basic views to display the catalog
+• Building a shopping cart system using Django sessions to allow users to keep selected products 
+while they browse the site
+• Creating the form and functionality to place orders on the site
+• Sending an asynchronous email confirmation to users when they place an order
 
 
 

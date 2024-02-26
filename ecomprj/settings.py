@@ -49,7 +49,7 @@ INSTALLED_APPS = [
     'paypal.standard.ipn',
 
     # Custom Apps
-    'core',
+    'core', # can also be written like 'shop.apps.ShopConfig',
     'userauths',
     'service',
 ]

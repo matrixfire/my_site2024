@@ -41,6 +41,8 @@ class Category(models.Model):
     title = models.CharField(max_length=100, default="Food")
     image = models.ImageField(upload_to="category", default="category.jpg")
 
+    # slug = models.SlugField(max_length=200, unique=True) # new, unique implies the creation of an index
+
     class Meta:
         verbose_name_plural = "Categories"
 
