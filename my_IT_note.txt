@@ -32,6 +32,12 @@ pip install -i https://pypi.tuna.tsinghua.edu.cn/simple
 
 
 ------------------------------------------------------------
+0,
+The overall structure of our app will be:
+- the Django runs the backend server and exposes an API. Hosted on PythonAnywhere.
+- the React frontend calls the API and renders the user interface on the client ’ s browser. Hosted on Netlify.
+
+
 1, 
 With Django, we can already create a complete web application. So why
 bother to create an API with Django and then create separate
@@ -60,9 +66,22 @@ minimal amount of code, DRF can transform any existing Django
 application into a web API.
 
 
+3, 
+Python is widely used all over the world to build automations,
+machine learning models, data analysis, and web development. It can
+help you build automations for day-to-day work tasks, create web
+applications, perform data analysis, and build machine learning
+models.
 
 
 
+4, serializers.py
+from rest_framework import serializers
+from some_app.models import SomeModel
+
+serializers.ModelSerializer
+ModelSerializer provides an API to create serializers
+from your models.
 
 
 
@@ -87,6 +106,27 @@ Tools:
 
 
 
+
+
+
+
+
+
+
+
+SEO:
+
+In the realm of SEO (Search Engine Optimization), several critical factors contribute to a website's ranking. These include:
+
+1. **Relevant Content:** High-quality and engaging content that is pertinent to users and their search queries.
+
+2. **Suitable Titles:** Appropriate title tags and URLs that accurately reflect the content and keywords.
+
+3. **Logical Structure:** Proper use of header tags to organize content in a logical and hierarchical manner.
+
+4. **Suitable Synopsis:** Well-crafted meta descriptions that provide a concise summary of the page's content.
+
+5. **Neat and Readable:** Responsive design to ensure the website functions well on various devices, and optimal site speed for a seamless user experience.
 
 
 
