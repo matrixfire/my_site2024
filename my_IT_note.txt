@@ -189,3 +189,45 @@ dd cc
 x 
 r 
 C-r
+
+
+
+
+
+
+
+The crisis of credit visualized: What is the credit crisis?
+
+It's a worldwide financial fiasco involving terms you've probably heard like subprime mortgages, collateralized debt obligations, frozen credit markets, and credit default swaps. Who's affected? Everyone. How did it happen? Here's how the credit crisis brings two groups of people together: homeowners and investors.
+
+Homeowners represent their mortgages, and investors represent their money. These mortgages represent houses, and this money represents large institutions like pension funds, insurance companies, sovereign funds, mutual funds, etc. These groups are brought together through the financial system, a bunch of banks and brokers commonly known as Wall Street.
+
+While it may not seem like it, these banks on Wall Street are closely connected to these houses on Main Street. To understand how, let's start at the beginning.
+
+Years ago, the investors are sitting on their pile of money looking for a good investment to turn into more money. Traditionally, they go to the US Federal Reserve where they buy treasury bills believed to be the safest investment. But in the wake of the dot-com bust and September 11th, Federal Reserve Chairman Alan Greenspan lowers interest rates to only 1% to keep the economy strong.
+
+1% is a very low return on investment, so the investors say no thanks. On the flip side, this means banks on Wall Street can borrow from the Fed for only 1%. Add to that general surpluses from Japan, China, and the Middle East, and there's an abundance of cheap credit. This makes borrowing money easy for banks and causes them to go crazy with leverage.
+
+Leverage is borrowing money to amplify the outcome of a deal. Here's how it works in a normal deal: someone with $10,000 buys a box for $10,000, sells it for $11,000, and makes an $1,000 profit. But using leverage, someone with $110,000 borrows $990,000 more, giving him $1 million in hand. He buys 100 boxes, sells them for $1,100,000, pays back his $990,000 plus $10,000 in interest, and after his initial $10,000, he's left with a $90,000 profit. Leverage turns good deals into great deals, a major way banks make their money.
+
+So, Wall Street takes out a ton of credit, makes great deals, and grows tremendously rich. Then pays it back. The investors see this and want a piece of the action. This gives Wall Street an idea: they can connect the investors to the homeowners through mortgages.
+
+Here's how it works: a family wants a house, so they save for a down payment and contact a mortgage broker. The mortgage broker connects the family to a lender who gives them a mortgage. The broker makes a nice commission, the family buys a house and becomes homeowners. This is great for them because housing prices have been rising practically forever.
+
+One day, the lender gets a call from an investment banker who wants to buy the mortgage. The lender sells it to him for a very nice fee. The investment banker then borrows millions of dollars, buys thousands more mortgages, and puts them into a nice little box. This box, called a collateralized debt obligation (CDO), works like three cascading trays. Money comes in from homeowners paying off their mortgages, filling the top tray first, then the middle, and whatever is left into the bottom.
+
+The investment banker then sells the safe slice to investors who only want safe investments, the okay slice to other bankers, and the risky slices to hedge funds and other risk-takers. The investment banker makes millions, repays his loans, and everyone is happy. The investors have found a good investment for their money, much better than the 1% treasury bills.
+
+They're pleased and want more CDO slices, so the investment banker calls up the lender wanting more mortgages. The lender calls up the broker for more homeowners, but the broker can't find anyone. Everyone that qualifies for a mortgage already has one. They have an idea: when homeowners default on their mortgage, the lender gets the house. Houses are always increasing in value. Since they're covered if the homeowners default, lenders can start adding risk to new mortgages, not requiring down payments, no proof of income, no documents at all. That's exactly what they did. Instead of lending to responsible homeowners, called prime mortgages, they started to get some that were less responsible. These are subprime mortgages.
+
+This is the turning point. Just like always, the mortgage broker connects the family with a lender and a mortgage, making his commission. The family buys a big house. The lender sells the mortgage to the investment banker, who turns it into a CDO and sells slices to investors and others. This works out nicely for everyone and makes them all rich. No one is worried because as soon as they sold the mortgage to the next guy, it was his problem if the homeowners were to default. They didn't care; they were selling off their risk to the next guy and making millions, like playing hot potato with a time bomb.
+
+Not surprisingly, the homeowners default on their mortgage, which, at this moment, is owned by the banker. This means he forecloses, and one of his monthly payments turns into a house. No big deal. He puts it up for sale, but more and more of his monthly payments turn into houses. Now there are so many houses for sale on the market, creating more supply than there is demand, and housing prices aren't rising anymore. In fact, they plummet.
+
+This creates an interesting problem for homeowners still paying their mortgages. As all the houses in their neighborhood go up for sale, the value of their house goes down, and they start to wonder why they're paying back their $300,000 mortgage when the house is now worth only $90,000. They decide that it doesn't make sense to continue paying, even though they can afford to, and they walk away from their house.
+
+Default rates sweep the country, and prices plummet. Now the investment banker is basically holding a box full of worthless houses. He calls up his buddy, the investor, to sell his CDO, but the investor isn't stupid and says no thanks. He knows that the stream of money isn't even a dribble anymore. The banker tries to sell to everyone, but nobody wants to buy his bomb. He's freaking out because he borrowed millions, sometimes billions of dollars to buy this bomb, and he can't pay it back. Whatever he tries, he can't get rid of it.
+
+But he's not the only one. The investors have already bought thousands of these bombs. The lender calls up, trying to sell his mortgage, but the banker won't buy it, and the broker is out of work. The whole financial system is frozen, and things get dark. Everybody starts going bankrupt. But that's not all. The investor calls up the homeowner and tells him that his investments are worthless.
+
+You can begin to see how the crisis flows in a cycle. Welcome to the crisis of credit.

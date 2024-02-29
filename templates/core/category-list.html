@@ -78,7 +78,7 @@
                                 {% for c in categories %}
                                 <article class="col-xl-4 col-lg-6 col-md-6 text-center hover-up mb-30 animated">
                                     <div class="post-thumb">
-                                        <a href="{% url 'core:category-product-list' c.cid %}">
+                                        <a href="{% url 'core:category_product_list' c.cid %}">
                                             <img style="height: 300px; width: 300px; object-fit: cover;" class="border-radius-15" src="{{c.image.url}}" alt="" />
                                         </a>
                                         <div class="entry-meta">
@@ -87,7 +87,7 @@
                                     </div>
                                     <div class="entry-content-2">
                                         <h4 class="post-title mb-15">
-                                            <a href="{% url 'core:category-product-list' c.cid %}">{{ c.title }}</a>
+                                            <a href="{% url 'core:category_product_list' c.cid %}">{{ c.title }}</a>
                                         </h4>
                                         <div class="entry-meta font-xs color-grey mt-10 pb-10">
                                             <div>
@@ -132,7 +132,7 @@
                                 <ul>
                                     {% for c in categories %}
                                     <li>
-                                        <a href="{% url 'core:category-product-list' c.cid %}"> <img src="{{c.image.url}}" alt="" />{{c.title}}</a><span class="count">{{c.category.count}}</span>
+                                        <a href="{% url 'core:category_product_list' c.cid %}"> <img src="{{c.image.url}}" alt="" />{{c.title}}</a><span class="count">{{c.category.count}}</span>
                                     </li>
                                     {% endfor %}
                                 </ul>

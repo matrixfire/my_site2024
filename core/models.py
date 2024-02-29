@@ -4,6 +4,7 @@ from django.utils.html import mark_safe
 from userauths.models import User
 from taggit.managers import TaggableManager
 from django_ckeditor_5.fields import CKEditor5Field
+from django.urls import reverse
 
 
 STATUS_CHOICE = (
@@ -38,13 +39,17 @@ def user_directory_path(instance, filename):
 class Category(models.Model):
     cid = ShortUUIDField(unique=True, length=10, max_length=20,
                          prefix="cat", alphabet="abcdefgh12345")
-    title = models.CharField(max_length=100, default="Food")
+    title = models.CharField(max_length=100, default="Food") # name
     image = models.ImageField(upload_to="category", default="category.jpg")
 
-    # slug = models.SlugField(max_length=200, unique=True) # new, unique implies the creation of an index
+    slug = models.SlugField(max_length=200, unique=True) # new, unique implies the creation of an index
 
-    class Meta:
-        verbose_name_plural = "Categories"
+    class Meta: # The Meta class is used to provide additional information about the model.
+        verbose_name_plural = "Categories" # 'categories'
+        # below is my newly added
+        ordering = ['title'] # the default ordering for the model
+        verbose_name = 'category' # not a must, but specify human-readable names in singular form
+        indexes = [models.Index(fields=['title']),] #  an index on the field for optimization purposes
 
     def category_image(self):
         return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
@@ -54,6 +59,10 @@ class Category(models.Model):
 
     def __str__(self):
         return self.title
+
+    def get_absolute_url(self): # the convention to retrieve the URL for a given object
+        return reverse('core:product_list_by_category',
+                       args=[self.slug])
 
 
 class Tags(models.Model):
@@ -99,20 +108,22 @@ class Product(models.Model):
 
     user = models.ForeignKey(User, on_delete=models.SET_NULL, null=True)
     category = models.ForeignKey(
-        Category, on_delete=models.SET_NULL, null=True, related_name="category")
+        Category, on_delete=models.SET_NULL, null=True, related_name="category") # why not: on_delete=models.CASCADE, related_name='products'
+
     vendor = models.ForeignKey(
         Vendor, on_delete=models.SET_NULL, null=True, related_name="product")
 
     title = models.CharField(max_length=100, default="Fresh Pear")
+    slug = models.SlugField(max_length=200) #  The slug for this product to build beautiful URLs.
     image = models.ImageField(
-        upload_to=user_directory_path, default="product.jpg")
+        upload_to=user_directory_path, default="product.jpg", blank=True) # "blank=True" I added; others: upload_to='products/%Y/%m/%d',
     # description = models.TextField(null=True, blank=True, default="This is the product")
-    description = CKEditor5Field(config_name='extends', null=True, blank=True)
+    description = CKEditor5Field(config_name='extends', null=True, blank=True) #  N: models.TextField(blank=True)
 
     price = models.DecimalField(
-        max_digits=99999999999999, decimal_places=2, default="1.99")
-    old_price = models.DecimalField(
-        max_digits=99999999999999, decimal_places=2, default="2.99")
+        max_digits=10, decimal_places=2, default="1.99") # O:max_digits=99999999999999?
+    old_price = models.DecimalField( # For the price field, we use DecimalField instead of FloatField to avoid rounding issues.
+        max_digits=10, decimal_places=2, default="2.99")
 
     specifications = CKEditor5Field(config_name='extends', null=True, blank=True)
     # specifications = models.TextField(null=True, blank=True)
@@ -123,14 +134,14 @@ class Product(models.Model):
     life = models.CharField(
         max_length=100, default="100 Days", null=True, blank=True)
     mfd = models.DateTimeField(auto_now_add=False, null=True, blank=True)
-
+    # created = models.DateTimeField(auto_now_add=True)
     tags = TaggableManager(blank=True)
 
     # tags = models.ForeignKey(Tags, on_delete=models.SET_NULL, null=True)
 
     product_status = models.CharField(
         choices=STATUS, max_length=10, default="in_review")
-
+    # available = models.BooleanField(default=True)
     status = models.BooleanField(default=True)
     in_stock = models.BooleanField(default=True)
     featured = models.BooleanField(default=False)
@@ -140,10 +151,16 @@ class Product(models.Model):
                          prefix="sku", alphabet="1234567890")
 
     date = models.DateTimeField(auto_now_add=True)
-    updated = models.DateTimeField(null=True, blank=True)
+    updated = models.DateTimeField(null=True, blank=True) # models.DateTimeField(auto_now=True)
 
     class Meta:
+        ordering = ['title']
         verbose_name_plural = "Products"
+        indexes = [
+            models.Index(fields=['pid', 'slug']), # N:id
+            models.Index(fields=['title']),
+            models.Index(fields=['-mfd']),# created?
+        ]
 
     def product_image(self):
         return mark_safe('<img src="%s" width="50" height="50" />' % (self.image.url))
@@ -154,6 +171,11 @@ class Product(models.Model):
     def get_precentage(self):
         new_price = (self.price / self.old_price) * 100
         return new_price
+
+    def get_absolute_url(self): # the convention to retrieve the URL for a given object
+        return reverse('core:product_detail',
+                       args=[self.pid, self.slug])
+
 
 
 class ProductImages(models.Model):

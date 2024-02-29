@@ -8,9 +8,12 @@ class ProductAdmin(admin.ModelAdmin):
     inlines = [ProductImagesAdmin]
     list_editable = ['title', 'price', 'featured', 'product_status']
     list_display = ['user', 'title', 'product_image', 'price', 'category', 'vendor', 'featured', 'product_status', 'pid']
+    list_filter = ['product_status', 'user', ] # X: Enables filtering options on the right side of the admin page.
+    prepopulated_fields = {'slug': ('title',)} # X
 
 class CategoryAdmin(admin.ModelAdmin):
     list_display = ['title', 'category_image']
+    prepopulated_fields = {'slug': ('title',)} # X
 
 class VendorAdmin(admin.ModelAdmin):
     list_display = ['title', 'vendor_image']

@@ -1,85 +1,89 @@
 from django import views
 from django.urls import path, include
-from core.views import add_to_cart, add_to_wishlist, ajax_add_review, ajax_contact_form, cart_view, category_list_view, category_product_list__view, checkout_view, customer_dashboard, delete_item_from_cart, filter_product, index, make_address_default, order_detail, payment_completed_view, payment_failed_view, product_detail_view, product_list_view, remove_wishlist, search_view, tag_list, update_cart, vendor_detail_view, vendor_list_view, wishlist_view, contact, about_us, purchase_guide, privacy_policy, terms_of_service
+from . import views
 
 app_name = "core"
 
 urlpatterns = [
 
     # Homepage
-    path("", index, name="index"),
-    path("products/", product_list_view, name="product-list"),
-    path("product/<pid>/", product_detail_view, name="product-detail"),
+    path("", views.index, name="index"),
+    # path("products/", views.product_list_view, name="product_list"),
+    # path("product/<pid>/", views.product_detail_view, name="product_detail"),
+
+    path('products/', views.product_list, name='product_list'), # product-list -> product_list
+    path('products/<slug:category_slug>/', views.product_list, name='product_list_by_category'),
+    # path('product/<int:id>/<slug:slug>/', views.product_detail, name='product_detail'),
+    path('product/<pid>/<slug:slug>/', views.product_detail, name='product_detail'),
+
 
     # Category
-    path("category/", category_list_view, name="category-list"),
-    path("category/<cid>/", category_product_list__view, name="category-product-list"),
+    path("category/", views.category_list_view, name="category_list"),
+    path("category/<cid>/", views.category_product_list__view, name="category_product_list"),
 
     # Vendor
-    path("vendors/", vendor_list_view, name="vendor-list"),
-    path("vendor/<vid>/", vendor_detail_view, name="vendor-detail"),
+    path("vendors/", views.vendor_list_view, name="vendor_list"),
+    path("vendor/<vid>/", views.vendor_detail_view, name="vendor_detail"),
 
     # Tags
-    path("products/tag/<slug:tag_slug>/", tag_list, name="tags"),
+    path("products/tag/<slug:tag_slug>/", views.tag_list, name="tags"),
 
     # Add Review
-    path("ajax-add-review/<int:pid>/", ajax_add_review, name="ajax-add-review"),
+    path("ajax_add_review/<int:pid>/", views.ajax_add_review, name="ajax_add_review"),
 
     # Search
-    path("search/", search_view, name="search"),
+    path("search/", views.search_view, name="search"),
 
     # Filter product URL
-    path("filter-products/", filter_product, name="filter-product"),
+    path("filter_products/", views.filter_product, name="filter_product"),
 
     # Add to cart URL
-    path("add-to-cart/", add_to_cart, name="add-to-cart"),
+    path("add_to_cart/", views.add_to_cart, name="add_to_cart"),
 
     # Cart Page URL
-    path("cart/", cart_view, name="cart"),
+    path("cart/", views.cart_view, name="cart"),
 
-    # Delete ITem from Cart
-    path("delete-from-cart/", delete_item_from_cart, name="delete-from-cart"),
+    # Delete Item from Cart
+    path("delete_from_cart/", views.delete_item_from_cart, name="delete_from_cart"),
 
-    # Update  Cart
-    path("update-cart/", update_cart, name="update-cart"),
+    # Update Cart
+    path("update_cart/", views.update_cart, name="update_cart"),
 
-      # Checkout  URL
-    path("checkout/", checkout_view, name="checkout"),
+    # Checkout URL
+    path("checkout/", views.checkout_view, name="checkout"),
 
     # Paypal URL
     path('paypal/', include('paypal.standard.ipn.urls')),
 
     # Payment Successful
-    path("payment-completed/", payment_completed_view, name="payment-completed"),
+    path("payment_completed/", views.payment_completed_view, name="payment_completed"),
 
     # Payment Failed
-    path("payment-failed/", payment_failed_view, name="payment-failed"),
+    path("payment_failed/", views.payment_failed_view, name="payment_failed"),
 
-    # Dahboard URL
-    path("dashboard/", customer_dashboard, name="dashboard"),
+    # Dashboard URL
+    path("dashboard/", views.customer_dashboard, name="dashboard"),
 
     # Order Detail URL
-    path("dashboard/order/<int:id>", order_detail, name="order-detail"),
+    path("dashboard/order/<int:id>", views.order_detail, name="order_detail"),
 
-    # Making address defauly
-    path("make-default-address/", make_address_default, name="make-default-address"),
+    # Making address default
+    path("make_default_address/", views.make_address_default, name="make_default_address"),
 
-    # wishlist page
-    path("wishlist/", wishlist_view, name="wishlist"),
+    # Wishlist page
+    path("wishlist/", views.wishlist_view, name="wishlist"),
 
-    # adding to wishlist
-    path("add-to-wishlist/", add_to_wishlist, name="add-to-wishlist"),
+    # Adding to wishlist
+    path("add_to_wishlist/", views.add_to_wishlist, name="add_to_wishlist"),
 
+    # Removing from wishlist
+    path("remove_from_wishlist/", views.remove_wishlist, name="remove_from_wishlist"),
 
-    # Remvoing from wishlist
-    path("remove-from-wishlist/", remove_wishlist, name="remove-from-wishlist"),
+    path("contact/", views.contact, name="contact"),
+    path("ajax_contact_form/", views.ajax_contact_form, name="ajax_contact_form"),
 
-
-    path("contact/", contact, name="contact"),
-    path("ajax-contact-form/", ajax_contact_form, name="ajax-contact-form"),
-
-    path("about_us/", about_us, name="about_us"),
-    path("purchase_guide/", purchase_guide, name="purchase_guide"),
-    path("privacy_policy/", privacy_policy, name="privacy_policy"),
-    path("terms_of_service/", terms_of_service, name="terms_of_service"),
+    path("about_us/", views.about_us, name="about_us"),
+    path("purchase_guide/", views.purchase_guide, name="purchase_guide"),
+    path("privacy_policy/", views.privacy_policy, name="privacy_policy"),
+    path("terms_of_service/", views.terms_of_service, name="terms_of_service"),
 ]
