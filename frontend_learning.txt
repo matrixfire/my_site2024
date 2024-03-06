@@ -235,6 +235,9 @@ document.querySelector("#hello").value.length
 document.querySelector('#tasks').append(li);
 
 
+
+
+
 const li = document.createElement('li');
 
 
@@ -801,6 +804,9 @@ Sure, let's extract the key points related to React from your HTML code:
 These are the key React-related points extracted from your HTML code.
 
 
+
+独立创建了一个电商博客网站， 网站实现了b2c电商网站的全部功能，
+个人独立从项目立项，需求分析，原型设计，架构设计，数据库设计，模块代码实现和单元测试，UI设计，前端设计，最后到代码整合，集成测试，到最后的网站发布。功能实现包括用户模块，商品模块，购物车模块，和订单模块。
 
 
 

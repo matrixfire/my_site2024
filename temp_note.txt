@@ -1,0 +1,40 @@
+我正在求职一份Django程序员的工作，假如我上家公司名叫深圳SBC公司， 我独立用Django创建了一个电商博客网站， 网站实现了b2c电商网站的全部功能，
+个人独立从项目立项，需求分析，原型设计，架构设计，数据库设计，模块代码实现和单元测试，UI设计，前端设计，最后到代码整合，集成测试，到最后的网站发布。功能实现包括用户模块，商品模块，购物车模块，和订单模块。
+
+以下英文是我当时做的细节步骤供你参考：
+1. Setup Project
+2. Configure Admin Page, Superuser and Jazzmin
+3. Custom User Model
+4. User Register System
+5. User Login System
+6. User Logout System
+7. Alerts In Django
+8. Product Model Structure
+9. List View for Products
+10. Category List View
+11. Product Category List View
+12. Django Context Processor for Template
+13. Vendor List View
+14. Vendor Detail
+15. Product Detail View
+16. Related Products in Detail View
+17. Tags in Django Using django-taggit
+18. Rich Text Editor In DJango
+19. Product Rating and Review
+20. Searching for Products21. Filtering Products using Ajax Jquery
+22. Filter Product By Price
+23. Filter Product By Price part 2
+24. Add to cart part
+25. Add to cart from all Pages and Loops
+26. Cart page and listing all products in cart
+27. Deleting product from cart page
+28. Updating product from cart page
+29. Checkout Page
+30. Paypal Checkout using DJango Paypal
+31. Get all Paypal Processing Items Dynamically and Save All Cart Items
+32. Create Invoice Page and Get All Recently ORdered Products33. Customer Dashboard
+34. User Address
+35. Make Default Address for Orders36. Wishlist List Page37. Adding Products to wishlist
+38. Remove from wishlist
+39. Chart Using Chart.Js
+40. Create profile automatically using Django Signal
